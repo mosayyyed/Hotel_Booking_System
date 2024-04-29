@@ -54,7 +54,7 @@ void bookRoom(Hotel hotel) {
       DateTime.now(), DateTime.now().add(Duration(days: 7)));
   for (Room room in availableRooms) {
     print(
-        "${room.roomNumber}: ${room.roomType}, Floor: ${room.roomFloor}, Price: ${room.getPrice()}");
+        "${room.roomNumber}: ${room.roomType}, Floor: ${room.roomFloor}, WiFi: ${room.hasWiFi}, Price: ${room.getPrice()}");
   }
 
   stdout.write("Enter room number to book: ");

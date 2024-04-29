@@ -43,7 +43,8 @@ class Hotel {
     if (availableRooms.isNotEmpty) {
       print('Available rooms from ${startDate} to ${endDate}:');
       for (Room room in availableRooms) {
-        print('Room ${room.roomNumber}: ${room.roomType}, ${room.roomFloor}');
+        print(
+            'Room ${room.roomNumber}: ${room.roomType}, Floor: ${room.roomFloor}, WiFi: ${room.hasWiFi}, Price: ${room.getPrice()}');
       }
     } else {
       print('No rooms available from ${startDate} to ${endDate}.');
