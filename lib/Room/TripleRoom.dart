@@ -2,24 +2,24 @@ import 'Room.dart';
 
 class TripleRoom extends Room {
   TripleRoom() {
-    price = Room.tripleRoomPrice;
+    roomPrice = Room.tripleRoomPrice;
     setPrice();
   }
   @override
   void setRoomType() {
-    type = "Triple";
+    roomType = "Triple";
   }
 
   @override
   void setPrice() {
-    if (floor >= 7) {
-      price = Room.tripleRoomPrice *= 1.3;
-    } else if (floor >= 0) {
-      price = Room.tripleRoomPrice *= 1.2;
+    if (roomFloor >= 7) {
+      roomPrice = Room.tripleRoomPrice *= 1.3;
+    } else if (roomFloor >= 0) {
+      roomPrice = Room.tripleRoomPrice *= 1.2;
     }
 
     if (hasWiFi) {
-      price += 20;
+      roomPrice += 20;
     }
   }
 }

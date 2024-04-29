@@ -6,10 +6,10 @@ abstract class Room {
   static double doubleRoomPrice = 150;
   static double tripleRoomPrice = 200;
 
-  late double price;
-  late int number;
-  late String type;
-  late int floor;
+  late double roomPrice;
+  late int roomNumber;
+  late String roomType;
+  late int roomFloor;
   late bool hasWiFi;
   bool isAvailable = true;
 
@@ -21,17 +21,17 @@ abstract class Room {
   }
   void setNumber() {
     _numberOfRooms++;
-    number = _numberOfRooms;
+    roomNumber = _numberOfRooms;
   }
 
   int getNumber() {
-    return number;
+    return roomNumber;
   }
 
   void setRoomType();
 
   String getRoomType() {
-    return type;
+    return roomType;
   }
 
   void setFloor() {
@@ -39,7 +39,7 @@ abstract class Room {
       print("Enter the floor for the room:");
       String input = stdin.readLineSync() ?? "";
       try {
-        floor = int.parse(input);
+        roomFloor = int.parse(input);
         break;
       } catch (e) {
         print("Invalid input. Please enter a valid integer floor number.");
@@ -71,17 +71,18 @@ abstract class Room {
   void setPrice();
 
   double getPrice() {
-    return price;
+    return roomPrice;
   }
 
   void changeBasePrice() {
-    if (type == "Single") {
+    print("Enter the type room");
+    if (roomType == "Single") {
       print("Enter the base price for Single room:");
       singleRoomPrice = double.parse(stdin.readLineSync() ?? "100");
-    } else if (type == "Double") {
+    } else if (roomType == "Double") {
       print("Enter the base price for Double room:");
       doubleRoomPrice = double.parse(stdin.readLineSync() ?? "150");
-    } else if (type == "Triple") {
+    } else if (roomType == "Triple") {
       print("Enter the base price for Triple room:");
       tripleRoomPrice = double.parse(stdin.readLineSync() ?? "200");
     }

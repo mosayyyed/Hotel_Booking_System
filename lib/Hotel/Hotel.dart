@@ -1,4 +1,3 @@
-import '../Booking/Booking.dart';
 import '../Guest/Guest.dart';
 import '../Payment/Payment.dart';
 import '../Room/Room.dart';
@@ -15,7 +14,7 @@ class Hotel {
   }
 
   void removeRoom(int roomNumber) {
-    rooms.removeWhere((room) => room.number == roomNumber);
+    rooms.removeWhere((room) => room.roomNumber == roomNumber);
   }
 
   List<Room> getAvailableRooms(DateTime startDate, DateTime endDate) {
@@ -31,12 +30,11 @@ class Hotel {
   void bookRoom(DateTime startDate, DateTime endDate, Guest guest, Room room,
       Payment payment) {
     if (room.isAvailable) {
-      Booking booking = Booking(startDate, endDate, guest, room, payment);
       room.isAvailable = false;
       print(
-          'Room ${room.number} has been booked for ${guest.name} from ${startDate} to ${endDate}.');
+          'Room ${room.roomNumber} has been booked for ${guest.name} from ${startDate} to ${endDate}.');
     } else {
-      print('Room ${room.number} is not available for booking.');
+      print('Room ${room.roomNumber} is not available for booking.');
     }
   }
 
@@ -45,7 +43,7 @@ class Hotel {
     if (availableRooms.isNotEmpty) {
       print('Available rooms from ${startDate} to ${endDate}:');
       for (Room room in availableRooms) {
-        print('Room ${room.number}: ${room.type}, ${room.floor}');
+        print('Room ${room.roomNumber}: ${room.roomType}, ${room.roomFloor}');
       }
     } else {
       print('No rooms available from ${startDate} to ${endDate}.');
