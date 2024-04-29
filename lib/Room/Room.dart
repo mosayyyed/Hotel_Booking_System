@@ -11,7 +11,7 @@ abstract class Room {
   late String type;
   late int floor;
   late bool hasWiFi;
-  late bool isAvailable;
+  bool isAvailable = true;
 
   Room() {
     setNumber();

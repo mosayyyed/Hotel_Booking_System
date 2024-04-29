@@ -20,7 +20,7 @@ class Hotel {
 
   List<Room> getAvailableRooms(DateTime startDate, DateTime endDate) {
     List<Room> availableRooms = [];
-    for (var room in rooms) {
+    for (Room room in rooms) {
       if (room.isAvailable) {
         availableRooms.add(room);
       }
@@ -44,7 +44,7 @@ class Hotel {
     List<Room> availableRooms = getAvailableRooms(startDate, endDate);
     if (availableRooms.isNotEmpty) {
       print('Available rooms from ${startDate} to ${endDate}:');
-      for (var room in availableRooms) {
+      for (Room room in availableRooms) {
         print('Room ${room.number}: ${room.type}, ${room.floor}');
       }
     } else {
